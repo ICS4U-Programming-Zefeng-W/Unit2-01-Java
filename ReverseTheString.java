@@ -30,17 +30,18 @@ class ReverseTheString {
     for (int i = 0; itr.hasNext(); i++) {
       list.add(reverse(itr.next()));
     }
-
+    
     // Write the corresponding reversed strings to output.txt
     FileWriter writer = new FileWriter("output.txt");
-
-    for (String input : list) { 
-      writer.write(input + "\n");
+    if (list.size() == 0) {
+      writer.write("Please enter at least one string in input.txt"); 
+    } else {
+      for (String input : list) { 
+        writer.write(input + "\n");
+      }
     }
     writer.close();
-
     System.out.println("Done");
-
   }
 
   // Recursive function to reverse and return a string
